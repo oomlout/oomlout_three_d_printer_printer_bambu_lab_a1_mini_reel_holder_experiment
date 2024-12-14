@@ -17,7 +17,7 @@ def make_scad(**kwargs):
         #filter = "test"
 
         kwargs["save_type"] = "none"
-        #kwargs["save_type"] = "all"
+        kwargs["save_type"] = "all"
         
         navigation = False
         #navigation = True    
@@ -49,11 +49,21 @@ def make_scad(**kwargs):
         
         part = copy.deepcopy(part_default)
         p3 = copy.deepcopy(kwargs)
-        p3["width"] = 3
-        p3["height"] = 3
+        p3["width"] = 1
+        p3["height"] = 1
         p3["thickness"] = 68
         part["kwargs"] = p3
-        part["name"] = "base"
+        part["name"] = "reel_inner_sleeve_3dqf"
+        parts.append(part)
+
+
+        part = copy.deepcopy(part_default)
+        p3 = copy.deepcopy(kwargs)
+        p3["width"] = 1
+        p3["height"] = 1
+        p3["thickness"] = 68
+        part["kwargs"] = p3
+        part["name"] = "shaft_enlarger"
         parts.append(part)
 
         
@@ -82,7 +92,159 @@ def make_scad(**kwargs):
         generate_navigation(sort = sort)
 
 
-def get_base(thing, **kwargs):
+def get_reel_inner_sleeve_3dqf(thing, **kwargs):
+
+    prepare_print = kwargs.get("prepare_print", True)
+    width = kwargs.get("width", 1)
+    height = kwargs.get("height", 1)
+    depth = kwargs.get("thickness", 3)                    
+    rot = kwargs.get("rot", [0, 0, 0])
+    pos = kwargs.get("pos", [0, 0, 0])
+    #pos = copy.deepcopy(pos)
+    #pos[2] += -20
+
+    extra = 3
+    diameter_main = 70 - extra
+    depth_main = 68
+    depth_end = 2
+    depth_end_inset = 10
+    
+
+    extra_cutout = 0
+    diameter_inner_main = 30 + extra
+    diameter_inner_end = (30-17)/2 + extra + (30/2)
+
+    depth_main = depth
+
+    depth_total = depth_main + depth_end + depth_end
+    
+
+    #add main_cylinder
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "p"
+    p3["shape"] = f"oobb_cylinder"    
+    p3["radius"] = diameter_main/2
+    p3["depth"] = depth_main
+    #p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)         
+    p3["pos"] = pos1
+    oobb_base.append_full(thing,**p3)
+    
+
+    #add end cylinder caps
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "p"
+    p3["shape"] = f"oobb_cylinder"
+    p3["radius"] = (diameter_main + extra + extra)/2
+    p3["depth"] = depth_end
+    #p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    pos1[2] += -depth_main/2 - depth_end/2
+    pos2 = copy.deepcopy(pos)
+    pos2[2] += depth_main/2 + depth_end/2
+    poss = []
+    poss.append(pos1)
+    poss.append(pos2)
+    p3["pos"] = poss
+    oobb_base.append_full(thing,**p3)
+
+
+    # add middle cutout
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "n"
+    p3["shape"] = f"oobb_cylinder"
+    p3["radius"] = (diameter_inner_main)/2
+    dep = depth_main + depth_end + depth_end
+    p3["depth"] = dep
+    #p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    p3["pos"] = pos1
+    oobb_base.append_full(thing,**p3)
+
+    # add end cutout
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "n"
+    p3["shape"] = f"oobb_cylinder"
+    p3["radius"] = (diameter_inner_main)/2 + (30-17)/2 + extra/2
+    dep = depth_end_inset
+    p3["depth"] = dep
+    #p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    pos1[2] += depth_main/2 + depth_end  - dep/2
+    p3["pos"] = pos1
+    oobb_base.append_full(thing,**p3)
+
+    shift_screw_x = 28
+    shift_screw_y = 28
+    shift_screw_z = 0 - depth_total/2
+    
+    #add screw_countersunk to connect
+    p3 = copy.deepcopy(kwargs)
+    p3["type"] = "n"
+    p3["shape"] = f"oobb_nut"
+    p3["radius_name"] = "m6"
+    #p3["depth"] = depth_total
+    p3["hole"] = True
+    #p3["clearance"] = ["top", "bottom"]
+    p3["nut"] = True
+    p3["overhang"] = True
+    p3["m"] = "#"
+    pos1 = copy.deepcopy(pos)
+    pos1[0] += 0
+    pos1[1] += shift_screw_y
+    pos1[2] += shift_screw_z
+    pos2 = copy.deepcopy(pos)
+    pos2[0] += 0
+    pos2[1] += -shift_screw_y
+    pos2[2] += shift_screw_z
+    pos3 = copy.deepcopy(pos)
+    pos3[0] += shift_screw_x
+    pos3[1] += 0
+    pos3[2] += shift_screw_z
+    pos4 = copy.deepcopy(pos)
+    pos4[0] += -shift_screw_x
+    pos4[1] += 0
+    pos4[2] += shift_screw_z
+    poss = []
+    poss.append(pos1)
+    poss.append(pos2)
+    poss.append(pos3)
+    poss.append(pos4)
+    p3["pos"] = poss
+    rot1 = copy.deepcopy(rot)
+    rot1[2] = 360/24
+    p3["rot"] = rot1
+    p3["zz"] = "bottom"
+    oobb_base.append_full(thing,**p3)
+
+
+    if prepare_print:
+        #put into a rotation object
+        components_second = copy.deepcopy(thing["components"])
+        return_value_2 = {}
+        return_value_2["type"]  = "rotation"
+        return_value_2["typetype"]  = "p"
+        pos1 = copy.deepcopy(pos)
+        pos1[1] += 100
+        return_value_2["pos"] = pos1
+        return_value_2["rot"] = [180,0,0]
+        return_value_2["objects"] = components_second
+        
+        thing["components"].append(return_value_2)
+
+    
+        #add slice # top
+        p3 = copy.deepcopy(kwargs)
+        p3["type"] = "n"
+        p3["shape"] = f"oobb_slice"
+        pos1 = copy.deepcopy(pos)
+        pos1[2] += 0
+        pos1[1] += 0
+        p3["pos"] = pos1
+        #p3["m"] = "#"
+        oobb_base.append_full(thing,**p3)
+
+def get_shaft_enlarger(thing, **kwargs):
 
     prepare_print = kwargs.get("prepare_print", True)
     width = kwargs.get("width", 1)
