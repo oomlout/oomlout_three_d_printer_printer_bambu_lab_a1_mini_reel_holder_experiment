@@ -3125,7 +3125,7 @@ thing:
     - 0
     - 0
     radius: 33.5
-    save_type: all
+    save_type: none
     shape: oobb_cylinder
     thickness: 68
     type: p
@@ -3140,7 +3140,7 @@ thing:
     - 0
     - -35.0
     radius: 36.5
-    save_type: all
+    save_type: none
     shape: oobb_cylinder
     thickness: 68
     type: p
@@ -3155,7 +3155,7 @@ thing:
     - 0
     - 35.0
     radius: 36.5
-    save_type: all
+    save_type: none
     shape: oobb_cylinder
     thickness: 68
     type: p
@@ -3170,7 +3170,7 @@ thing:
     - 0
     - 0
     radius: 16.5
-    save_type: all
+    save_type: none
     shape: oobb_cylinder
     thickness: 68
     type: n
@@ -3185,7 +3185,7 @@ thing:
     - 0
     - 31.0
     radius: 24.5
-    save_type: all
+    save_type: none
     shape: oobb_cylinder
     thickness: 68
     type: n
@@ -3207,7 +3207,7 @@ thing:
     - 0
     - 0
     - 15.0
-    save_type: all
+    save_type: none
     shape: oobb_nut
     thickness: 68
     type: n
@@ -3230,7 +3230,7 @@ thing:
     - 0
     - 0
     - 15.0
-    save_type: all
+    save_type: none
     shape: oobb_nut
     thickness: 68
     type: n
@@ -3253,7 +3253,7 @@ thing:
     - 0
     - 0
     - 15.0
-    save_type: all
+    save_type: none
     shape: oobb_nut
     thickness: 68
     type: n
@@ -3276,7 +3276,7 @@ thing:
     - 0
     - 0
     - 15.0
-    save_type: all
+    save_type: none
     shape: oobb_nut
     thickness: 68
     type: n
@@ -3290,22 +3290,22 @@ thing:
     - 0
     - 0
     - 0
-    save_type: all
+    save_type: none
     shape: oobb_slice
     thickness: 68
     type: n
     width: 1
   components_string:
-  - oobb_cylinder_shape_p_type_68_depth_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_33.5_radius
-  - oobb_cylinder_shape_p_type_2_depth_0_0_-35.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_36.5_radius
-  - oobb_cylinder_shape_p_type_2_depth_0_0_35.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_36.5_radius
-  - oobb_cylinder_shape_n_type_72_depth_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_16.5_radius
-  - oobb_cylinder_shape_n_type_10_depth_0_0_31.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_24.5_radius
-  - oobb_nut_shape_n_type_m6_radius_name_0_28_-36.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
-  - oobb_nut_shape_n_type_m6_radius_name_0_-28_-36.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
-  - oobb_nut_shape_n_type_m6_radius_name_28_0_-36.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
-  - oobb_nut_shape_n_type_m6_radius_name_-28_0_-36.0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
-  - oobb_slice_shape_n_type_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness
+  - oobb_cylinder_shape_p_type_68_depth_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_33.5_radius
+  - oobb_cylinder_shape_p_type_2_depth_0_0_-35.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_36.5_radius
+  - oobb_cylinder_shape_p_type_2_depth_0_0_35.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_36.5_radius
+  - oobb_cylinder_shape_n_type_72_depth_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_16.5_radius
+  - oobb_cylinder_shape_n_type_10_depth_0_0_31.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_24.5_radius
+  - oobb_nut_shape_n_type_m6_radius_name_0_28_-36.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
+  - oobb_nut_shape_n_type_m6_radius_name_0_-28_-36.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
+  - oobb_nut_shape_n_type_m6_radius_name_28_0_-36.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
+  - oobb_nut_shape_n_type_m6_radius_name_-28_0_-36.0_pos_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness_true_hole_true_nut_true_overhang_0_0_15.0_rot_bottom_zz
+  - oobb_slice_shape_n_type_none_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_68_thickness
   description: test reel inner sleeve 3dqf 1x1x68
   folder: C:\gh\oomlout_oobb_version_4_generated_parts\things\oobb_test_reel_inner_sleeve_3dqf_01_01_68
   height: 1

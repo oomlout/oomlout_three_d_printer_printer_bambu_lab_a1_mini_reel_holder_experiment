@@ -1,0 +1,155 @@
+full_rotations:
+- 0
+- 0
+- 0
+full_shift:
+- 0
+- 0
+- 0
+id: oobb_test_reel_holder_spacer_01_01_17
+kwargs:
+  height: 1
+  modes:
+  - 3dpr
+  overwrite: true
+  thickness: 17
+  type: test_reel_holder_spacer
+  width: 1
+name: reel_holder_spacer
+project_name: C:\gh\oomlout_three_d_printer_printer_bambu_lab_a1_mini_reel_holder_experiment
+thing:
+  components:
+  - - - height: 1
+        pos:
+        - -12.5
+        - -19.5
+        - 0
+        shape: cube
+        size:
+        - 25
+        - 39
+        - 17
+        type: positive
+        width: 1
+  - - h: 200
+      height: 1
+      inclusion: laser
+      m: '#'
+      pos: &id001
+      - 7
+      - -12
+      - -100.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+      width: 1
+    - h: 200
+      height: 1
+      inclusion: 3dpr
+      m: '#'
+      pos: *id001
+      r: 1.8
+      shape: cylinder
+      type: negative
+      width: 1
+    - h: 200
+      height: 1
+      inclusion: 'true'
+      m: '#'
+      pos: *id001
+      r: 1.5
+      shape: cylinder
+      type: negative
+      width: 1
+  - - h: 200
+      height: 1
+      inclusion: laser
+      m: '#'
+      pos: &id002
+      - 7
+      - 12
+      - -100.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+      width: 1
+    - h: 200
+      height: 1
+      inclusion: 3dpr
+      m: '#'
+      pos: *id002
+      r: 1.8
+      shape: cylinder
+      type: negative
+      width: 1
+    - h: 200
+      height: 1
+      inclusion: 'true'
+      m: '#'
+      pos: *id002
+      r: 1.5
+      shape: cylinder
+      type: negative
+      width: 1
+  components_objects:
+  - height: 1
+    modes:
+    - 3dpr
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    save_type: all
+    shape: oobb_cube
+    size:
+    - 25
+    - 39
+    - 17
+    thickness: 17
+    type: p
+    width: 1
+  - height: 1
+    m: '#'
+    modes:
+    - 3dpr
+    overwrite: true
+    pos:
+    - 7
+    - -12
+    - 0
+    radius_name: m3
+    save_type: all
+    shape: oobb_hole
+    thickness: 17
+    type: n
+    width: 1
+  - height: 1
+    m: '#'
+    modes:
+    - 3dpr
+    overwrite: true
+    pos:
+    - 7
+    - 12
+    - 0
+    radius_name: m3
+    save_type: all
+    shape: oobb_hole
+    thickness: 17
+    type: n
+    width: 1
+  components_string:
+  - oobb_cube_shape_p_type_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_17_thickness_25_39_17_size
+  - oobb_hole_shape_n_type_m3_radius_name_7_-12_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_17_thickness
+  - oobb_hole_shape_n_type_m3_radius_name_7_12_0_pos_all_save_type_true_overwrite_'3dpr'_modes_1_width_1_height_17_thickness
+  description: test reel holder spacer 1x1x17
+  folder: C:\gh\oomlout_oobb_version_4_generated_parts\things\oobb_test_reel_holder_spacer_01_01_17
+  height: 1
+  height_mm: 14
+  id: oobb_test_reel_holder_spacer_01_01_17
+  thickness: 17
+  thickness_mm: 17
+  type: test_reel_holder_spacer
+  width: 1
+  width_mm: 14
