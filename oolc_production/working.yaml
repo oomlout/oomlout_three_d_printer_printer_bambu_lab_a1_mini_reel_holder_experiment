@@ -1,6 +1,6 @@
 project_id: oomlout_three_d_printer_printer_bambu_lab_a1_mini_reel_holder_experiment
 project_name: Oomlout Three D Printer Printer Bambu Lab A1 Mini Reel Holder Experiment
 project_repo: https://github.com/oomlout/oomlout_three_d_printer_printer_bambu_lab_a1_mini_reel_holder_experiment
-production_format:
-  oolc_1:
-    file_location: source_files/oolc_1.cdr
+#production_format:
+#  oolc_1:
+#    file_location: source_files/oolc_1.cdr
