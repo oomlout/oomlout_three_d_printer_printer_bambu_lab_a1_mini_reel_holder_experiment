@@ -1,4 +1,16 @@
 # Oomlout Three D Printer Printer Bambu Lab A1 Mini Reel Holder Experiment
+[![](image_600.jpg)](image.jpg)
+
+
+
+
+
+
+
+
+
+
+
 
 
 Oomlout Three D Printer Printer Bambu Lab A1 Mini Reel Holder Experiment  
